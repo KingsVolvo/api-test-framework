@@ -15,5 +15,5 @@ def singleton(cls):
 @singleton
 class Logger:
     def __init__(self):
-        logging.config.fileConfig("logging.conf", encoding="utf-8")
+        logging.config.fileConfig("logging.conf")
         self.logr = logging.getLogger("root")

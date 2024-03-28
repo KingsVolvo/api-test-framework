@@ -8,7 +8,7 @@ import unittest
 
 if __name__ == "__main__":
 
-    filename = "C:/Project/poc-everything/api-test/case.test"
+    filename = "api-test/case.test"
     lines = filter_comments(filename=filename)
     Logger.logr.info(lines)
     (url, api_test_models) = parse_url_testmodel_url(lines)
@@ -22,8 +22,8 @@ if __name__ == "__main__":
         api_test_suite.addTest(api_test_case)
  
     #unittest.TextTestRunner().run(api_test_suite)
-    #runner = HTMLTestRunner(output='test-reports')
-    runner = CustomHTMLTestRunner(output='test-reports')
+    runner = HTMLTestRunner(output='test-reports')
+    #runner = CustomHTMLTestRunner(output='test-reports')
     runner.run(api_test_suite)
 
     
