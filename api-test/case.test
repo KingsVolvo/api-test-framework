@@ -1,0 +1,17 @@
+#定义API接口 URL
+API_URL = "http://47.115.214.0:5555"
+
+    #定义测试用例
+TEST_CASES = [
+    {
+        "method": "GET",
+        "url": "/hello",
+        "params": "",
+        "expected_response": {
+            "code": 200,
+            "body": {
+              "Hello":"World"
+            }
+        }
+    }
+]

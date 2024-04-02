@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[[source]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+verify_ssl = true
+name = "pypitunatsinghuaedu"
+
+[[source]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+verify_ssl = true
+name = "pypitunatsinghuaedu"
+
+[packages]
+pydantic = {version = "*", index = "pypitunatsinghuaedu"}
+requests = {version = "*", index = "pypitunatsinghuaedu"}
+htmltestrunner-rv = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
+python_full_version = "3.10.0"
