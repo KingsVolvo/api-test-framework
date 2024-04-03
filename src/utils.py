@@ -4,14 +4,14 @@ from api_test_model import ApiTestModel
 from pydantic import *
 
 
-def filter_comments(filename):
+def filter_comments(file_path):
 
     """
     过滤单行注释以#开头，多行#开头, 空格#开头
     Filter one line or multi-lines of comments
     """
 
-    with open(filename, "r", encoding="utf-8") as f:
+    with open(file_path, "r", encoding="utf-8") as f:
         lines = f.readlines()
     # 匹配单行注释和多行注释
     pattern = re.compile(r"(\s+)?(#.*)|(\/\*.*?\*\/)|(\'\'\'.*?\'\'\')")
