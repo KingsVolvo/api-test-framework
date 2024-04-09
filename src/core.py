@@ -34,11 +34,3 @@ def parse_url_testmodel_url(lines) -> Tuple[str, list[ApiTestModel]]:
     return (api_url, api_tests)
 
 
-if __name__ == "__main__":
-    filename = "C:/Project/poc-everything/api-test/case.test"
-    lines = filter_comments(filename=filename)
-    Logger.logr.info(lines)
-    (url, test_cases) = parse_url_testmodel_url(lines)
-    Logger.logr.debug("test_cases:{}".format(test_cases))
-
-    api_test_suite = ApiTestSuite(test_cases)

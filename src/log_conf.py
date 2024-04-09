@@ -1,5 +1,5 @@
 import logging.config
-
+import sys
 
 def singleton(cls):
     instances = {}
@@ -15,5 +15,5 @@ def singleton(cls):
 @singleton
 class Logger:
     def __init__(self):
-        logging.config.fileConfig("logging.conf")
+        logging.config.fileConfig('src/config/logging.conf')
         self.logr = logging.getLogger("root")

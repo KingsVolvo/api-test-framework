@@ -10,7 +10,7 @@ TEST_CASES = [
         "expected_response": {
             "code": 200,
             "body": {
-              "Hello":"World"
+              "Hello":"ERROR"
             }
         }
     }
