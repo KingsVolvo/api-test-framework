@@ -25,18 +25,20 @@ class ApiTestCase(unittest.TestCase):
             api_test_url,
             params=self.api_test_model.params,
         )
+        Logger.logr.info("response.code:{}, response.data:{}".format(response.status_code, response.json()))
         self.assertEqual(
             response.status_code, self.api_test_model.expected_response.get("code")
         )
         
-        
         # 如果预期返回值中有data字段，判断返回值是否相等
         if self.api_test_model.expected_response.get("code") == 200:
-            if self.api_test_model.expected_response.get("data"):
+            Logger.logr.debug("200 ok")
+            if self.api_test_model.expected_response.get("body"):             
                 self.assertEqual(
-                    response.json(), self.api_test_model.expected_response.get("data")
+                    response.json(), self.api_test_model.expected_response.get("body")
                 )
-       
+        
+
 
     def test_add(self):
         result = add(5, 3)
